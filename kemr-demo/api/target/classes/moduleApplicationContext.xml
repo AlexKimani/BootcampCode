@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- Apps -->
+
+	<bean id="bootcampexample.app.example" factory-bean="kenyacore.appFactoryBean" factory-method="createInstance">
+		<constructor-arg value="bootcampexample.example" />
+		<constructor-arg value="My App" />
+		<constructor-arg value="bootcampexample/example/home.page" />
+		<constructor-arg value="bootcampexample:apps/example.png" />
+		<constructor-arg value="700" />
+	</bean>
+
+    <!--Program-->
+    <bean id="bootcampexample.vmcc.program" class="org.openmrs.module.kenyacore.program.ProgramDescriptor">
+        <property name="targetUuid" value="fadd19f0-ec9b-11e3-817c-2c41385eca5b"/>
+        <property name="eligibilityCalculation" value="org.openmrs.module.bootcampexample.calculation.EligibleForVmccProgramCalculation"/>
+        <property name="defaultEnrollmentForm" ref="bootcampexample.form.enrol"/>
+        <property name="patientForms">
+            <set>
+                <ref bean="bootcampexample.form.procedure"/>
+                <ref bean="bootcampexample.form.medhistory"/>
+            </set>
+        </property>
+        <property name="visitForms">
+            <set>
+                <ref bean="bootcampexample.form.followup"/>
+            </set>
+        </property>
+        <property name="reports">
+            <set>
+                <ref bean="bootcampexample.common.report.bootcamp1"/>
+            </set>
+        </property>
+        <property name="fragments">
+            <map>
+                <entry key="enrollment-summary" value="kenyaemr:program/mchcs/mchcsEnrollmentSummary" />
+            </map>
+        </property>
+        <property name="order" value="600" />
+    </bean>
+
+    <!--Reports-->
+
+    <!--Boot camp Report-->
+    <bean id="bootcampexample.common.report.bootcamp1" class="org.openmrs.module.kenyacore.report.CalculationReportDescriptor">
+        <property name="targetUuid" value="43968758-e80f-11e3-9b38-2c41385eca5b" />
+        <property name="name" value="Boot Camp Report" />
+        <property name="calculation" value="org.openmrs.module.bootcampexample.calculation.BootCampCalculation" />
+        <property name="apps"><set><ref bean="kenyaemr.app.reports" /></set></property>
+    </bean>
+
+    <bean id="bootcampexample.config.report" class="org.openmrs.module.kenyacore.report.ReportConfiguration">
+        <property name="programReports">
+            <map>
+                <entry key-ref="kenyaemr.mchcs.program">
+                    <set>
+                        <ref bean="bootcampexample.common.report.bootcamp1"></ref>
+                    </set>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+	<!-- Forms -->
+    <!--myForm Form-->
+	<bean id="bootcampexample.form.example" class="org.openmrs.module.kenyacore.form.FormDescriptor">
+		<property name="targetUuid" value="b694b1bc-2086-47dd-a4ad-ba48f9471e4b" />
+		<property name="apps">
+			<set>
+				<ref bean="kenyaemr.app.clinician" />
+				<ref bean="kenyaemr.app.chart" />
+			</set>
+		</property>
+		<property name="icon" value="bootcampexample:forms/example.png" />
+		<property name="htmlform" value="bootcampexample:myForm.html" />
+	</bean>
+
+    <!--Enrol Infant Form-->
+    <bean id="bootcampexample.form.enrol" class="org.openmrs.module.kenyacore.form.FormDescriptor">
+        <property name="targetUuid" value="b9f63d60-e6f9-11e3-ae4a-2c41385eca5b"/>
+        <property name="apps">
+            <set><ref bean="kenyaemr.app.clinician"></ref> </set>
+        </property>
+        <property name="icon" value="bootcampexample:forms/example.png"/>
+        <property name="htmlform" value="bootcampexample:earlyInfantMaleCircumcision/enrolInfant.html"/>
+    </bean>
+
+    <!--Medical History And Physical Examination Form-->
+    <bean id="bootcampexample.form.medhistory" class="org.openmrs.module.kenyacore.form.FormDescriptor">
+        <property name="targetUuid" value="bf43a54e-e192-11e3-9add-2c41385eca5b"/>
+        <property name="apps">
+            <set><ref bean="kenyaemr.app.clinician"/> </set>
+        </property>
+        <property name="icon" value="bootcampexample:forms/example.png"/>
+        <property name="htmlform" value="bootcampexample:earlyInfantMaleCircumcision/medicalHistoryAndPhysicalExamination.html"/>
+    </bean>
+
+    <!--Circumcision Procedure Form-->
+    <bean id="bootcampexample.form.procedure" class="org.openmrs.module.kenyacore.form.FormDescriptor">
+        <property name="targetUuid" value="4f8fd2bc-e6f7-11e3-a84b-2c41385eca5b"/>
+        <property name="apps">
+            <set><ref bean="kenyaemr.app.clinician"></ref> </set>
+        </property>
+        <property name="icon" value="bootcampexample:forms/example.png"/>
+        <property name="htmlform" value="bootcampexample:earlyInfantMaleCircumcision/circumcisionProcedure.html"/>
+    </bean>
+
+    <!--Post-Op Follow Up Form-->
+    <bean id="bootcampexample.form.followup" class="org.openmrs.module.kenyacore.form.FormDescriptor">
+        <property name="targetUuid" value="2a969e46-e643-11e3-8761-2c41385eca5b"/>
+        <property name="apps">
+            <set><ref bean="kenyaemr.app.clinician"></ref></set>
+        </property>
+        <property name="icon" value="bootcampexample:forms/example.png"/>
+        <property name="htmlform" value="bootcampexample:earlyInfantMaleCircumcision/postOpFollowUp.html"/>
+    </bean>
+
+    <!-- Example of adding a form to the general visit form list -->
+   	<bean id="bootcampexample.config.form" class="org.openmrs.module.kenyacore.form.FormConfiguration">
+		<property name="commonVisitForms">
+			<set>
+				<ref bean="bootcampexample.form.example" />
+			</set>
+		</property>
+
+		<!-- Example of adding a form to the HIV program visit form list -->
+		<!--<property name="programVisitForms">
+			<map>
+				<entry key-ref="kenyaemr.program.hiv">
+					<set><ref bean="bootcampexample.form.example" /></set>
+				</entry>
+			</map>
+		</property>-->
+
+		<!-- Example of disabling an existing form. This form will no longer appear in the "Available Forms" list -->
+		<property name="disabledForms">
+			<set>
+				<ref bean="kenyaemr.common.form.progressNote" />
+			</set>
+		</property>
+	</bean>
+</beans>

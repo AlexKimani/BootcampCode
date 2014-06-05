@@ -1,0 +1,51 @@
+<htmlform>
+
+    <div class="ke-form-header">
+        <table width="100%">
+            <tr>
+                <td>Date <encounterDate id="encounter-date" showTime="true" /></td>
+                <td>Provider <encounterProvider default="currentUser" /></td>
+                <td>Location <encounterLocation default="GlobalProperty:kenyaemr.defaultLocation" /></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="ke-form-content">
+        <fieldset>
+            <legend>Early Infant Male Circumcision Client Form</legend>
+            <table>
+                <tbody>
+                <tr>
+                    <td>
+                        Theatre Register Number: (As per facility procedures)
+                        <patient field="identifier" identifierTypeId="6581a14c-eaf1-11e3-b77c-2c41385eca5b" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Main Source of Infant Male Circumcision:<hr/></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="source" value="Radio/ TV">Radio/ TV</input>
+                        <input type="radio" name="source" value="Print Media">Print Media</input>
+                        <input type="radio" name="source" value="Road Show">Road Show</input>
+                        <input type="radio" name="source" value="Mobilizer/ CHW">Mobilizer/ CHW</input>
+                        <input type="radio" name="source" value="Maternity/ MCH">Maternity/ MCH</input>
+                        <input type="radio" name="source" value="Other">Other(Specify)</input>
+                        <input type="text" size="30"/>
+                    </td>
+                </tr>
+
+
+                </tbody>
+            </table>
+        </fieldset>
+    </div>
+
+    <enrollInProgram programId="fadd19f0-ec9b-11e3-817c-2c41385eca5b" />
+
+    <div class="ke-form-footer">
+        <submit />
+    </div>
+
+</htmlform>

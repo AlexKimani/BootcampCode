@@ -1,0 +1,160 @@
+<htmlform>
+
+<div class="ke-form-header">
+    <table width="100%">
+        <tr>
+            <td>Date <encounterDate id="encounter-date" showTime="true" /></td>
+            <td>Provider <encounterProvider default="currentUser" /></td>
+            <td>Location <encounterLocation default="GlobalProperty:kenyaemr.defaultLocation" /></td>
+        </tr>
+    </table>
+</div>
+
+<div class="ke-form-content">
+<fieldset>
+    <legend>Circumcision Procedure</legend>
+    <table>
+        <tr>
+            <td width="420"><obs conceptId="1521AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" labelText="Start Time"/></td>
+            <td><obs conceptId="1522AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" labelText="End Time"/></td>
+        </tr>
+    </table>
+
+    <br/>
+
+    <table>
+        <tr>
+            <td>Pre-operative meds given (if any):</td>
+            <td><obs conceptId="161931AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/></td>
+        </tr>
+        <tr><td>Anaesthesia Used:<hr/></td></tr>
+        <tr>
+            <td width="450">Type:</td>
+            <td width="450">Concentration:</td>
+            <td width="450">Volume:<input type="text" size="10" name="volume"/>mls</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" name="type" value="Lignocaine">Lignocaine</input>
+            </td>
+            <td>
+                <input type="radio" name="concentration" value="1">1%</input>
+                <input type="radio" name="concentration" value="2">2%</input>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" name="type" value="Other">Other (specify)</input>
+                <input type="text" size="20" name="type"/>
+            </td>
+            <td>
+                <input type="radio" name="concentration" value="Other">Other (specify)</input>
+                <obs conceptId="160047AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+            </td>
+        </tr>
+    </table>
+
+    <br/>
+
+    <table>
+        <tr><td>Type of circumcision procedure:<hr/></td></tr>
+        <tr>
+            <td>
+                <input type="radio" name="circumcision" value="Mogen">Mogen</input>
+                <input type="radio" name="circumcision" value="Other">Other (specify)</input>
+                <input type="text" size="30" name="circumcision"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Adverse Events during the procedure?:
+                <input type="radio" name="ae" value="Yes">Yes</input>
+                <input type="radio" name="ae" value="No">No</input>
+            </td>
+            <td>Type of AE (refer to the AE description form):
+                <input type="text" size="50" name="ae"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td>If Yes, how would you rate it?:
+            <input type="radio" name="ae" value="mild">Mild</input>
+            <input type="radio" name="ae" value="moderate">Moderate</input>
+            <input type="radio" name="ae" value="severe">Severe</input>
+            </td>
+        </tr>
+    </table>
+
+    <br/>
+
+    <table>
+        <tr>
+            <td width="400">Name of Clinician: <obs conceptId="1473AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/></td>
+            <td width="400">Cadre:
+                <input type="radio" name="cadre" value="mo">MO</input>
+                <input type="radio" name="cadre" value="co">CO</input>
+                <input type="radio" name="cadre" value="nurse">Nurse</input>
+            </td>
+            <td>Signature:
+                <input type="text" size="20" name="cadre"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td width="400">Name of Assistant: <obs conceptId="1473AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/></td>
+            <td width="400">Cadre:
+                <input type="radio" name="cadre" value="mo">MO</input>
+                <input type="radio" name="cadre" value="co">CO</input>
+                <input type="radio" name="cadre" value="nurse">Nurse</input>
+            </td>
+            <td>Signature:
+                <input type="text" size="20" name="cadre"/>
+            </td>
+        </tr>
+    </table>
+</fieldset>
+
+<fieldset>
+    <legend>Immediate Post-Op</legend>
+    <table>
+        <tr>
+            <td>Medication given:
+
+                <input type="radio" name="medication" value="panadol">Panadol</input>
+
+                <input type="radio" name="medication" value="other">Other</input>
+                <input type="text" size="30" name="medication"/>
+
+                <input type="radio" name="medication" value="none">None</input>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td width="450">
+                Volume:
+                <input type="text" size="10" name="medication"/> mls
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Parent given post-op instructions?
+                <input type="radio" name="medication" value="yes">Yes</input>
+                <input type="radio" name="medication" value="no">No</input>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p><b>NOTE:</b> IF A MODERATE OR SEVERE EVENT IS OBSERVED, INFORM APPROPRIATE SUPERVISOR AND COMPLETE INCIDENCE FORM IMMEDIATELY.</p>
+            </td>
+        </tr>
+    </table>
+</fieldset>
+</div>
+
+<div class="ke-form-footer">
+    <submit />
+</div>
+
+</htmlform>

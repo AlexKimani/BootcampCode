@@ -1,0 +1,278 @@
+<htmlform>
+
+    <script type="text/javascript">
+        // Add javascript here
+    </script>
+
+    <div class="ke-form-header">
+        <table width="100%">
+            <tr>
+                <td>Date <encounterDate id="encounter-date" showTime="true" /></td>
+                <td>Provider <encounterProvider default="currentUser" /></td>
+                <td>Location <encounterLocation default="GlobalProperty:kenyaemr.defaultLocation" /></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="ke-form-content">
+                    <fieldset>
+                    <legend>Medical History and Physical Examination</legend>
+                        <table>
+                            <tr>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td>Family History of Bleeding Disorder:</td>
+                                            <td>
+                                                <input type="radio" name="bleeding_disorder" value="Yes">Yes</input>
+                                                <input type="radio" name="bleeding_disorder" value="No">No</input>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <br/>
+
+                                    <table>
+                                        <td>Client presenting with: <hr /></td>
+                                        <td>
+                                            <tr>
+                                                <td>
+                                                <!--<td><obs conceptId="1729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"-->
+                                                         <!--answerConceptIds="140238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1119AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,125203AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"-->
+                                                         <!--answerLabels="Fever, Jaundice, Scrotal Swelling"/>-->
+                                                Fever
+                                                </td>
+                                                <td>
+                                                    <obs conceptId="140238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptIds="1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                         style="radio" answerLabels="Yes,No"/>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Jaundice</td>
+                                                <td>
+                                                    <input type="radio" name="jaundice" value="Yes">Yes</input>
+                                                    <input type="radio" name="jaundice" value="No">No</input>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Undescended Testis(es)</td>
+                                                <td>
+                                                    <input type="radio" name="testis" value="Yes">Yes</input>
+                                                    <input type="radio" name="testis" value="No">No</input>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Scrotal Swelling</td>
+                                                <td>
+                                                    <input type="radio" name="scrotum" value="Yes">Yes</input>
+                                                    <input type="radio" name="scrotum" value="No">No</input>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Abnormal Penile Appearance</td>
+                                                <td>
+                                                    <input type="radio" name="penile" value="Yes">Yes</input>
+                                                    <input type="radio" name="penile" value="No">No</input>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Congenital Anomaly (Specify):</td>
+                                                <td>
+                                                    <input type="text" size="50" name="congenital"/>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Other (Specify):</td>
+                                                <td>
+                                                    <input type="text" size="50" name="other"/>
+                                                </td>
+                                            </tr>
+                                        </td>
+                                    </table>
+                                </td>
+
+                                <td><td></td><td></td><td></td><td></td></td>
+                                <td><td></td><td></td><td></td><td></td></td>
+                                <td><td></td><td></td><td></td><td></td></td>
+                                <td><td></td><td></td><td></td><td></td></td>
+                                <td><td></td><td></td><td></td><td></td></td>
+
+                                <td>
+                                    <table>
+                                        <td>Pregnancy/ Delivery: <hr /></td>
+                                        <td>
+                                            <tr>
+                                                <td>Site of Delivery</td>
+                                                <td>
+                                                    <obs conceptId="1572AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptIds="1536AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,
+                                                    1589AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                         style="radio" answerLabels="Home,Facility,Other"/>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Mode of Delivery</td>
+                                                <td>
+                                                    <obs conceptId="5630AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptIds="1171AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,
+                                                    1170AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" style="radio" answerLabels="C-Section, Vaginal" />
+                                                </td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td>Pregnancy Complications (Specify):</td>
+                                                <td>
+                                                    <obs conceptId="1576AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                            answerConceptIds="
+                                                            127592AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,
+                                                            1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,
+                                                            230AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,
+                                                            123396AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,
+                                                            5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,
+                                                            140238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,
+                                                            135592AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,
+                                                            206AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,
+                                                            154223AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,
+                                                            134612AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,
+                                                            117069AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,
+                                                            110523AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,
+                                                            146192AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,
+                                                            139981AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,
+                                                            49AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,
+                                                            130AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,
+                                                            129318AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,
+                                                            113195AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,
+                                                            143376AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,
+                                                            228AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,
+                                                            1172AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,
+                                                            129211AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,
+                                                            1171AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,
+                                                            1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                                                            "
+                                                            answerLabels="
+                                                            Retained Placenta,
+                                                            None,
+                                                            Postpartum Hemorrhage,
+                                                            Vaginal Discharge,
+                                                            Other,
+                                                            Fever,
+                                                            Loss of Consciousness,
+                                                            Seizure,
+                                                            Neonatal Death,
+                                                            Maternal Death,
+                                                            Infection Specific to the Perinatal Period,
+                                                            Failure to Progress in Labor,
+                                                            Cardiac Arrest,
+                                                            Foot-Drop,
+                                                            Vesico-vaginal Fistula,
+                                                            Puerperal Sepsis,
+                                                            Postpartum Psychosis,
+                                                            Obstetrical Rupture of Uterus,
+                                                            Cord Round Neck,
+                                                            Antepartum Hemorrhage,
+                                                            Breech Delivery,
+                                                            Premature rupture of membranes,
+                                                            Cesarean Section,
+                                                            Not Known
+                                                            "/>
+                                                </td>
+                                            </tr>
+
+                                        </td>
+                                    </table>
+
+                                    <br/>
+
+                                    <table>
+                                        <tr>
+                                            <td>Any Known Allergies? </td>
+                                            <td>
+                                                <input type="radio" name="allergies" value="Yes">Yes</input>
+                                                <input type="radio" name="allergies" value="No">No</input>
+                                            </td>
+                                        <tr>
+                                            <td>If Yes, specify :</td>
+                                            <td><input type="text" size="50"/></td>
+                                        </tr>
+                                        </tr>
+                                    </table>
+
+                                    <br/>
+
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <obs conceptId="5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" labelText="Weight" /> (kg)
+
+                                                <obs conceptId="5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" labelText="Length" /> (cm)
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+
+                    <br />
+
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Eligibility for Circumcision</legend>
+
+                        <table>
+                            <td>Client eligible for circumcision? <hr /></td>
+                            <td>
+                                <tr>
+                                    <td>In good health:</td>
+                                    <td>
+                                        <obs conceptId="159926AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerConceptIds="162133AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                             style="radio" answerLabels="Yes,No"/>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Parent(s)/ Guardian Counseled:</td>
+                                    <td>
+                                        <input type="radio" name="counsel" value="Yes">Yes</input>
+                                        <input type="radio" name="counsel" value="No">No</input>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Parent(s)/ Guardian Consent Obtained:</td>
+                                    <td>
+                                        <input type="radio" name="consent" value="Yes">Yes</input>
+                                        <input type="radio" name="consent" value="No">No</input>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>If No for any of the above, explain:</td>
+                                    <td>
+                                        <input type="text" size="50" name="congenital"/>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <b>NOTE:</b>  PROCEED WITH CIRCUMCISION <b>ONLY</b> IF ALL BOXES HAVE BEEN CHECKED "YES".
+                                    </td>
+                                </tr>
+                            </td>
+
+                        </table>
+
+                    </fieldset>
+    </div>
+
+    <div class="ke-form-footer">
+        <submit />
+    </div>
+
+</htmlform>

@@ -1,0 +1,101 @@
+<htmlform>
+
+    <div class="ke-form-header">
+    <table width="100%">
+        <tr>
+            <td>Date <encounterDate id="encounter-date" showTime="true" /></td>
+            <td>Provider <encounterProvider default="currentUser" /></td>
+            <td>Location <encounterLocation default="GlobalProperty:kenyaemr.defaultLocation" /></td>
+        </tr>
+    </table>
+    </div>
+
+    <div class="ke-form-content">
+        <fieldset>
+            <legend>Post-Op Follow-Up</legend>
+
+            <table>
+                <tr>
+                    <td>Type of visit:</td>
+                    <td>
+                        <input type="radio" name="visit" value="48Hr">48 Hr</input>
+                        <input type="radio" name="visit" value="3/4 day">3/4 day</input>
+                        <input type="radio" name="visit" value="7 day">7 day</input>
+                        <input type="radio" name="visit" value="Other">Other</input>
+                    </td>
+                </tr>
+                <tr>
+                    <td>If Other, specify:</td>
+                    <td>
+                        <input type="text" size="50"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Post-Op Adverse Event:</td>
+                    <td>
+                        <input type="radio" name="post_op" value="No">No</input>
+                        <input type="radio" name="post_op" value="Yes">Yes</input>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>If Yes, refer to the AE description form and complete the following: <hr/></td>
+                </tr>
+
+                <tr>
+                    <td>Type of AE</td>
+                    <td>
+                        <input type="text" size="50"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>If Yes, how would you rate it? </td>
+                    <td>
+                        <input type="radio" name="rate" value="Mild">Mild</input>
+                        <input type="radio" name="rate" value="Moderate">Moderate</input>
+                        <input type="radio" name="rate" value="Severe">Severe</input>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Notes</td>
+                    <td>
+                        <input type="text" size="50"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Name of Reviewing Officer</td>
+                    <td>
+                        <input type="text" size="50"/>
+                    </td>
+                    <td></td><td></td><td></td>
+                    <td>Signature</td>
+                    <td>
+                        <input type="text" size="50"/>
+                    </td>
+                </tr>
+            </table>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Clinical Notes</legend>
+            <table>
+                <tr>
+                    <td>
+                        <textarea name="textarea" rows="5" cols="100"></textarea>
+                    </td>
+                </tr>
+            </table>
+
+        </fieldset>
+    </div>
+
+    <div class="ke-form-footer">
+        <submit />
+    </div>
+
+    </htmlform>
